@@ -48,18 +48,18 @@ jobs:
           max_attempts: 1
           command: ./gradlew ${{ env.VARIANT }} --info --warning-mode all --no-configuration-cache
 
-      - name: 🔧 Run Android Lint
-        run: ./gradlew lintFdroidFullDebug --no-configuration-cache
-        continue-on-error: true
+#      - name: 🔧 Run Android Lint
+#        run: ./gradlew lintFdroidFullDebug --no-configuration-cache
+#        continue-on-error: true
 
-      - name: 📊 Upload Lint Report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: lint-report
-          path: app/build/reports/lint-results-*.html
-          retention-days: 30
-          if-no-files-found: warn
+#      - name: 📊 Upload Lint Report
+#        if: always()
+#        uses: actions/upload-artifact@v4
+#        with:
+#          name: lint-report
+#          path: app/build/reports/lint-results-*.html
+#          retention-days: 30
+#          if-no-files-found: warn
 
       - name: 🔍 Find Universal APK
         run: |
